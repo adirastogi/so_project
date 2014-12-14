@@ -11,6 +11,9 @@ def main():
     lazy_stopword_filter(filename)
 
 def lazy_stopword_filter(filename):
+    stop_set = set(stopwords.words('english'))
+    with open("../resources/stopwords.txt", 'r') as f:
+	stop_set = stop_set | set((l.strip() for l in f.readlines()))
     outfile = sys.argv[2]
     text = open(filename, 'rb')
     reader = csv.DictReader(text, delimiter=',', quotechar='"')
@@ -28,7 +31,7 @@ def lazy_stopword_filter(filename):
 	
 	body = html_tag_remover.cleanup_html(line["Body"])
         for word in body.split(): # simple tokenization
-            if word.lower() not in stopwords.words('english'):
+            if word.lower() not in stop_set:
 	        str_to_write_body = str_to_write_body + " " + word
 	#print(str_to_write_body)
 
