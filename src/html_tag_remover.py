@@ -9,8 +9,8 @@ def cleanup_html(text):
     taglist2 = ['p','a','pre','strong','blockquote']
     taglist1 = ['code']
     t1 = remove_html_tag_content(text,taglist1);
-    t2 = strip_tags(text,taglist2);
-    return t2.get_text();
+    t2 = strip_tags(t1,taglist2);
+    return t2.get_text().encode('ascii','ignore')
 
 def filter_common_words(text, stop_words):
     if isinstance(text, unicode):

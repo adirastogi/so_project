@@ -19,6 +19,9 @@ def lazy_stopword_filter(filename):
     writer = csv.DictWriter(target, fieldnames, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
     writer.writerow(dict((fn, fn) for fn in fieldnames))
     for line in reader:
+        # remove multiple spaces from all columns 
+        for k,v in line.items():
+            line[k] = ' '.join(v.split())
 	str_to_write_title = ""
 	for word in line["Title"].split():
 	    if word.lower() not in stopwords.words('english'):
