@@ -10,9 +10,7 @@ def cleanup_html(text):
     taglist1 = ['code']
     t1 = remove_html_tag_content(text,taglist1);
     t2 = strip_tags(text,taglist2);
-    t2 = t2[12:]
-    t2 = t2[:-14]
-    return t2;
+    return t2.get_text();
 
 def filter_common_words(text, stop_words):
     if isinstance(text, unicode):
