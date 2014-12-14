@@ -209,3 +209,17 @@ $&lt;NA&gt;
 [56,]    0  0.5  0.00  0.000 0.0000 0.00000 0.000000 0.0000000 0.00000000 0.000000000 0.0000000000 0.0000000000
 </code></pre>
 ","r matlab machine-learning"
+"4","How do I replace special characters in a URL?","<p>This is probably very simple, but I simply cannot find the answer myself :( </p>
+
+<p>Basicaly, what I want is, given this string:</p>
+
+<p>""http://www.google.com/search?hl=en&amp;q=c# objects""</p>
+
+<p>I want this output:</p>
+
+<p><a href=""http://www.google.com/search?hl=en&amp;q=c%23+objects"">http://www.google.com/search?hl=en&amp;q=c%23+objects</a></p>
+
+<p>I'm sure there's some helper class somewhere buried in the Framework that takes care of that for me, but I'm having trouble finding it.</p>
+
+<p>EDIT: I should add, that this is for a Winforms App.</p>
+","c# url encoding"
