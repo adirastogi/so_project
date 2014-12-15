@@ -9,8 +9,8 @@ from nltk.corpus import stopwords
 
 def main():
     input_file=sys.argv[1]
-    distint_words, tags, wordscounts = countWords(input_file)
-    print distint_words, tags
+    distint_words, tags, wordcounts = countWords(input_file)
+    print wordcounts
 
 def countWords(input_file):
     wordset = set()

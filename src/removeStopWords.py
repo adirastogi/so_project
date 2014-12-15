@@ -31,7 +31,7 @@ def lazy_stopword_filter(filename):
 	for word in line["Title"].split():
 	    word = ''.join(ch for ch in word if ch not in exclude_punctuation)
 	    if word.lower() not in stopwords.words('english'):
-		str_to_write_title = str_to_write_title + " " + word
+		str_to_write_title = str_to_write_title + " " + word.lower()
 	#print(str_to_write_title)	
 	str_to_write_body = "" 
 	
@@ -39,7 +39,7 @@ def lazy_stopword_filter(filename):
         for word in body.split(): # simple tokenization
 	    word = ''.join(ch for ch in word if ch not in exclude_punctuation)
             if word.lower() not in stop_set:
-	        str_to_write_body = str_to_write_body + " " + word
+	        str_to_write_body = str_to_write_body + " " + word.lower()
 	#print(str_to_write_body)
 
 	writer.writerow({'Id': line["Id"], 'Title':str_to_write_title, 'Body': str_to_write_body, 'Tags':line["Tags"]})	
